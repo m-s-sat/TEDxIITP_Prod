@@ -3,9 +3,7 @@ const { Merch } = require("../models/merch");
 async function getAllMerch(req, res) {
   try {
     const merchItemArray = await Merch.find();
-    res
-      .status(200)
-      .json({ message: "Merch items fetched successfully", merchItemArray });
+    res.status(200).json(merchItemArray);
   } catch (error) {
     res
       .status(500)
@@ -17,9 +15,7 @@ async function getMerchBySize(req, res) {
   const { size } = req.params;
   try {
     const merchItemArray = await Merch.find({ size });
-    res
-      .status(200)
-      .json({ message: "Merch items fetched successfully", merchItemArray });
+    res.status(200).json(merchItemArray);
   } catch (error) {
     res
       .status(500)
