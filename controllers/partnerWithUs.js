@@ -9,11 +9,13 @@ async function getPartnerWithUs(req, res) {
     res.status(500).json({ message: "Failed to get partner with us requests" });
   }
 }
+
 async function createPartnerWithUs(req, res) {
   try {
     await PartnerWithUs.create(req.body);
     res.status(201).json({ message: "Partner with us request submitted" });
   } catch (error) {
+    console.error("Error creating partner request:", error);
     res
       .status(500)
       .json({ message: "Failed to submit partner with us request" });

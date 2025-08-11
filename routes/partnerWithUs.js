@@ -3,7 +3,7 @@ const router = express.Router();
 const {
   getPartnerWithUs,
   createPartnerWithUs,
-} = require("../controllers/patnerWithUs");
+} = require("../controllers/partnerWithUs");
 
 router.get("/", getPartnerWithUs);
 

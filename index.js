@@ -11,10 +11,23 @@ const ticketsRoutes = require("./routes/tickets");
 const partnerWithUsRoutes = require("./routes/partnerWithUs");
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 
-app.use(cors());
+// Configure CORS properly
+app.use(
+  cors({
+    origin: true,
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"],
+  })
+);
 connectDB();
+
+// Test route to check if server is working
+app.get("/api/test", (req, res) => {
+  res.json({ message: "Server is working!", timestamp: new Date() });
+});
 
 app.use("/api/contactUs", contactUsRoutes);
 app.use("/api/merch", merchRoutes);
