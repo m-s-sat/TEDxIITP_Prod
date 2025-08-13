@@ -3,12 +3,13 @@ const cors = require("cors");
 
 const express = require("express");
 const app = express();
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 3000;
 const connectDB = require("./connection");
 const contactUsRoutes = require("./routes/contactUs");
 const merchRoutes = require("./routes/merch");
 const ticketsRoutes = require("./routes/tickets");
 const partnerWithUsRoutes = require("./routes/partnerWithUs");
+const paymentRoutes_Merch = require("./routes/payments");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -33,6 +34,7 @@ app.use("/api/contactUs", contactUsRoutes);
 app.use("/api/merch", merchRoutes);
 app.use("/api/tickets", ticketsRoutes);
 app.use("/api/partnerWithUs", partnerWithUsRoutes);
+app.use("/api/payments", paymentRoutes_Merch);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
