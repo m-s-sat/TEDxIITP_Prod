@@ -22,11 +22,15 @@ const ticketSchema = new mongoose.Schema({
     required: true,
   },
   price_till: {
-    type: Date,
+    type: String,
     required: true,
   },
   session_type: {
     // 1 for first sesssion   2 for 2nd session :)
+    type: String,
+    required: true,
+  },
+  paymentLink: {
     type: String,
     required: true,
   },

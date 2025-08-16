@@ -24,8 +24,16 @@ async function getMerchBySize(req, res) {
 }
 
 async function createMerch(req, res) {
-  const { name, offerPrice, originalPrice, image, type, size, description } =
-    req.body;
+  const {
+    name,
+    offerPrice,
+    originalPrice,
+    image,
+    type,
+    size,
+    description,
+    paymentLink,
+  } = req.body;
   try {
     const merchItem = await Merch.create({
       name,
@@ -35,6 +43,7 @@ async function createMerch(req, res) {
       type,
       size,
       description,
+      paymentLink,
     });
     res
       .status(201)

@@ -31,6 +31,10 @@ const merchSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  paymentLink: {
+    type: String,
+    required: true,
+  },
 });
 
 const Merch = mongoose.model("Merch", merchSchema);

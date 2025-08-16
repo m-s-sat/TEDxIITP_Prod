@@ -28,6 +28,7 @@ async function createTicket(req, res) {
     description,
     price_till,
     session_type,
+    paymentLink,
   } = req.body;
   try {
     const ticket = await Ticket.create({
@@ -38,6 +39,7 @@ async function createTicket(req, res) {
       description,
       price_till,
       session_type,
+      paymentLink,
     });
     res.status(201).json(ticket);
   } catch (error) {
