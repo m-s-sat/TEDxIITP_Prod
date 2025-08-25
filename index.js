@@ -14,7 +14,7 @@ const path = require('path');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-
+app.use(express.static(path.join(__dirname, 'dist')));
 // Configure CORS properly
 app.use(
   cors({
