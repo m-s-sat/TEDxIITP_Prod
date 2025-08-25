@@ -10,6 +10,7 @@ const merchRoutes = require("./routes/merch");
 const ticketsRoutes = require("./routes/tickets");
 const partnerWithUsRoutes = require("./routes/partnerWithUs");
 const paymentRoutes_Merch = require("./routes/payments");
+const path = require('path');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -35,6 +36,10 @@ app.use("/api/merch", merchRoutes);
 app.use("/api/tickets", ticketsRoutes);
 app.use("/api/partnerWithUs", partnerWithUsRoutes);
 app.use("/api/payments", paymentRoutes_Merch);
+
+app.get(/.*/, (req,res)=>{
+  res.sendFile(path.join(__dirname, "dist", "index.html"));
+})
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
