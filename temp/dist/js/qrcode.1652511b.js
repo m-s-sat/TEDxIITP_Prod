@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunktedxiitpatna"]=self["webpackChunktedxiitpatna"]||[]).push([[487],{9824:function(t,e,n){function r(t,e,n,r,a,i){return" Redirecting... "}n.r(e),n.d(e,{default:function(){return c}});var a={name:"Qrcode",created(){window.location.href="https://youtu.be/o-YBDTqX_ZU"}},i=n(89);const u=(0,i.Z)(a,[["render",r]]);var c=u}}]);
+//# sourceMappingURL=qrcode.1652511b.js.map
